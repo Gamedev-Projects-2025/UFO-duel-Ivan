@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9220853846626788726}
   - component: {fileID: -5925446235283258531}
   - component: {fileID: 8808751212167843230}
+  - component: {fileID: 1353034509501556424}
   m_Layer: 0
   m_Name: rocket_0 1
   m_TagString: Player
@@ -106,8 +107,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   Ghosttarget: []
-  speed: 10
-  rotationSpeed: 100
 --- !u!70 &7673732891355984348
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -198,3 +197,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 20
+--- !u!114 &1353034509501556424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2933919144292087085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5bed66494df7547abd87d5b60d44bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile:
+    speed: 10
+    rotationSpeed: 100

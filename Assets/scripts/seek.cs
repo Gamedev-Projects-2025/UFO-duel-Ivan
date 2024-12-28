@@ -7,13 +7,15 @@ public class seek : MonoBehaviour
 
     //copies of the main target
     [SerializeField] public Transform[] Ghosttarget;
-    [SerializeField] private float speed;
-    [SerializeField] private float rotationSpeed;
+
+    private float speed, rotationSpeed;
 
     //current target
     private Transform missileTarget;
     void Start()
     {
+        speed = gameObject.GetComponent<SeekerProjectile>().projectile.getSpeed();
+        rotationSpeed = gameObject.GetComponent<SeekerProjectile>().projectile.getRotationSpeed();
         //playing audio on spawn
         if (gameObject.GetComponent<AudioSource>() != null)
         {
@@ -39,7 +41,7 @@ public class seek : MonoBehaviour
 
     public void move()
     {
-        if (missileTarget != null)
+        if (missileTarget != null && gameObject.GetComponent<SeekerProjectile>() != null)
         {
             //calculating the rotation and direction of the target
             Vector2 direction = (missileTarget.position - transform.position).normalized;

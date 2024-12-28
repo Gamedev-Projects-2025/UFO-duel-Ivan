@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 322633907356853454}
   - component: {fileID: 6311723686573787680}
   - component: {fileID: -3404103949605502174}
+  - component: {fileID: 4312508865632025565}
   m_Layer: 0
   m_Name: rocket_0
   m_TagString: enemy
@@ -108,8 +109,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   Ghosttarget: []
-  speed: 5
-  rotationSpeed: 100
 --- !u!70 &7673732891355984348
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -187,7 +186,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggeringTag: Player
-  sound: {fileID: 8300000, guid: 5a82fe85a64d75e4594ad90a783909c7, type: 3}
 --- !u!114 &322633907356853454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,3 +309,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4312508865632025565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2933919144292087085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5bed66494df7547abd87d5b60d44bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile:
+    speed: 5
+    rotationSpeed: 150

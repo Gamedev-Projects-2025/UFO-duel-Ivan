@@ -3,14 +3,13 @@ using UnityEngine.InputSystem;
 
 public class Mover : MonoBehaviour
 {
-    [SerializeField]
     private float speed = 1f;
 
     [SerializeField]
-    private float speedUpModifier = 2f;
+    private float speedUpModifier = 1f;
 
     [SerializeField]
-    private float speedDownModifier = 0.5f;
+    private float speedDownModifier = 1f;
 
     [SerializeField]
     private InputAction up = new InputAction(type: InputActionType.Button);
@@ -29,6 +28,13 @@ public class Mover : MonoBehaviour
 
     [SerializeField]
     private InputAction speedDown = new InputAction(type: InputActionType.Button);
+
+    public void Start()
+    {
+        speed = gameObject.GetComponent<Player>().Speed;
+        speedDownModifier = gameObject.GetComponent<Player>().SpeedDownModifier;
+        speedUpModifier = gameObject.transform.GetComponent<Player>().SpeedUpModifier;
+    }
 
     private void OnEnable()
     {

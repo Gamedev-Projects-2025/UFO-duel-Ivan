@@ -7,7 +7,6 @@ public class Abduct : MonoBehaviour
 {
     [SerializeField] private string enemyTag;
     [SerializeField] private NumberField score;
-    [SerializeField] private int points;
 
     private Collider2D target;
 
@@ -58,10 +57,13 @@ public class Abduct : MonoBehaviour
     //abduting the target and adding to the score
     void PerformAction()
     {
+        if(target.GetComponent<HumanTarget>() != null) {
+            score.AddNumber(target.GetComponent<HumanTarget>().target.getScore());
+        }
+
         Destroy(target.gameObject);
         isPlayerInTrigger = false;
-        target = null;
-        score.AddNumber(points);
+        target = null; 
         if (gameObject.GetComponent<AudioSource>() != null)
         {
             gameObject.GetComponent<AudioSource>().Play();
