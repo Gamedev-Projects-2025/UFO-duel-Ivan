@@ -7,6 +7,7 @@ public class playerDeath : MonoBehaviour
     [SerializeField] string triggeringTag;
     [SerializeField] private string sceneName; // Name of the scene to load
     [SerializeField] private NumberField score, lives;
+    [SerializeField] private GameManager gameManager;
 
     //used when player collides with the enemy
     private void OnTriggerEnter2D(Collider2D other)
@@ -18,22 +19,10 @@ public class playerDeath : MonoBehaviour
             lives.SetNumber(gameObject.GetComponent<Player>().Lives);
             if (gameObject.GetComponent<Player>().Lives <= 0)
             {
-                LoadScene();
+                gameManager.LoadBadEnding();
             }
         }
 
-    }
-
-    //Used to load the game over scene.
-    public void LoadScene()
-    {
-        if (!string.IsNullOrEmpty(sceneName))
-        {
-            //Transfering score between screens
-            ScoreManager.Instance.CurrentScore = score.GetNumber();
-            ScoreManager.Instance.UpdateHighScore();
-            SceneManager.LoadScene(sceneName);
-        }
     }
 
     public void Start()
